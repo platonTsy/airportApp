@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><td colspan="2" th:text="|FROM: ${from}; TO: ${to}|"/></tr>
+        </thead>
+        <tbody data-th-each="shedule : ${flight.shedules}">
+            <tr>
+                <td data-th-text="${#dates.format(shedule.since, 'dd-MM-yyyy')}"/>
+                <td data-th-text="${#dates.format(shedule.to, 'dd-MM-yyyy')}"/>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

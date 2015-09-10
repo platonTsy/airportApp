@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr><th colspan="2" th:text="|From: ${from}|"/></tr>
+        <tr><td>from</td><td>to</td></tr>
+    </thead>
+    <tbody data-th-each="flightFrom : ${flightsFrom}">
+        <tr>
+            <td data-th-text="${flightFrom.from}"></td>
+            <td data-th-text="${flightFrom.to}"></td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr><th colspan="2" th:text="|From: ${from}; To: ${to}|"/></tr>
+        <tr><td>from</td><td>to</td></tr>
+    </thead>
+    <tbody data-th-each="flightFrom : ${flightsFromTo}">
+        <tr>
+            <td data-th-text="${flightFrom.from}"></td>
+            <td data-th-text="${flightFrom.to}"></td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr><th colspan="3" th:text="|From: ${from}; To: ${to}|"/></tr>
+        <tr><td>from</td><td>to</td></tr>
+    </thead>
+    <tbody data-th-each="flight : ${airplane.flights}">
+        <tr>
+            <td th:text="${airplane.name}"/>
+            <td data-th-text="${flight.from}"></td>
+            <td data-th-text="${flight.to}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
